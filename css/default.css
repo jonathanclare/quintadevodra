@@ -17,15 +17,12 @@ body
 
 .wrapper 
 {
-    font-family: arial;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     color: #66757f;
     text-align: center;
-
     margin: 0 auto;
-
-    max-width: 1500px;
-    padding:65px 20px 0px 20px;
+    padding-top:65px;
 }
 
 /* Link defaults */
