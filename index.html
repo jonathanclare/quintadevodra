@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <title>Ski Scotland</title>
+        <link rel="icon" href="./snowflake.png">
+
+        <meta name="description" content="Ski Scotland">
+        <meta name="keywords" content="Ski Scotland">
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="./css/default.css"  />
+        <script src="./js/main.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <ul class="nav flex-box no-user-select">  
+                <li><img src="./img/snowflake.png" /></li>
+                <li class="active"><a href="#" onclick="openArea('index');return false;">Coe</a></li>
+                <li><a href="#" onclick="openArea('nevis');return false;">Nevis</a></li>
+                <li><a href="#" onclick="openArea('shee');return false;">Shee</a></li>
+                <li><a href="#" onclick="openArea('gorm');return false;">Gorm</a></li>
+                <li><a href="#" onclick="openArea('lecht');return false;" class="count">Lecht</a></li>
+            </ul>
+            <div id="coe" class="skiarea flex-box container-1">
+                <div class="flex-box container-2">                         
+                    <div class="box pistemap"><div>Glencoe</div><a class="coe-pistemap" target="_blank" href="./img/coe.jpg"><div class="img-hover"></div><img data-src="./img/coe.jpg"></a></div>                    
+                    <ul class="flex-box links box no-user-select">  
+                        <li><a href="http://www.sais.gov.uk/glencoe/" target="_blank">Avalanche Report</a></li>
+                        <li><a href="http://www.mwis.org.uk/text/WH" target="_blank">Mountain Forecast</a></li>
+                        <li><a href="https://www.google.com/maps/dir/Current+Location/Glencoe+Mountain+Ltd/data=!4m2!4m1!3e0" target="_blank">Directions</a></li>
+                        <li><a href="https://www.facebook.com/GlencoeMountain/" target="_blank">Facebook</a></li>
+                        <li><a href="http://www.glencoemountain.co.uk/" target="_blank">Website</a></li>
+                    </ul>
+                    <div class="box twitter"><a class="twitter-timeline" href="https://twitter.com/glencoemountain" data-widget-id="697427516097753089" data-chrome="noborders transparent">Tweets by @glencoemountain</a></div>
+                </div>
+                <div class="flex-box container-3">
+                    <ul class="flex-box thumbnails box">
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/glencoe/mainbasin.jpeg"><span>Main Basin</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/glencoe/mainbasin.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/glencoe/flypaper.jpeg"><span>Flypaper</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/glencoe/flypaper.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/glencoe/spring.jpeg"><span>Spring Run</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/glencoe/spring.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/glencoe/mid.jpeg"><span>Mid Mountain</span><div class="img-hover"></div><img class="test" data-src="http://www.winterhighland.info/cams/glencoe/mid.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/glencoe/access2200.jpeg"><span>Plateau</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/glencoe/access2200.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/glencoe/wall.jpeg"><span>Wall</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/glencoe/wall.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/glencoe/cliffy.jpeg"><span>Cliffy</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/glencoe/cliffy.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/glencoe/base1200.jpeg"><span>Base</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/glencoe/base1200.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                    </ul>
+                    <div class="box weather"><iframe frameborder="0" src="http://www.mwis.org.uk/text/WH" class="weather-frame"></iframe></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
