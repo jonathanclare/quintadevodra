@@ -10,6 +10,8 @@ html
 
 body
 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
@@ -73,9 +75,6 @@ li a
 /* Navigation */
 .nav 
 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-
     position: fixed;
     top: 0;
     right: 0;
@@ -107,7 +106,7 @@ li a
     border-bottom: 4px solid #000;
     transition-property: color, background, border-color; 
     transition-duration: 0.3s, 0.3s, 0.3s; 
-    transition-timing-function: ease, ease, ease;
+    transition-timing-function: ease-in;
 }
 .nav li:not(:first-child):hover
 {
@@ -120,6 +119,23 @@ li a
     border-color: #fcbc3b;
     color: #fcbc3b;
 }
+
+/* Images */
+.img
+{
+    opacity: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition-property: opacity; 
+    transition-duration: 0.5s; 
+    transition-timing-function: ease-in;
+}
+.img.loaded
+{
+    opacity: 1;
+}
+
 
 /* banner */
 .banner
@@ -140,7 +156,6 @@ li a
 {
     flex:2;
 }
-
 .banner1
 {
     -webkit-flex-flow: column nowrap;
@@ -149,21 +164,11 @@ li a
 .banner1 > div 
 {
     flex:1;
-    overflow:hidden;
 }
-.banner1 > div > img 
-{
-    width: 100%;
-}
-
 .banner2
 {
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
-}
-.banner2 > div 
-{
-    overflow:hidden;
 }
 .banner2  > div:nth-child(1) 
 {
@@ -173,11 +178,6 @@ li a
 {
     flex:1;
 }
-.banner2 > div > img 
-{
-    width: 100%;
-}
-
 .banner3
 {
     -webkit-flex-flow: column nowrap;
@@ -186,15 +186,11 @@ li a
 .banner3 > div 
 {
     flex:1;
-    overflow:hidden;
-}
-.banner3 > div > img 
-{
-    width: 100%;
 }
 
+
 /* headers */
-.main-header
+.header
 {
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
@@ -221,6 +217,40 @@ li a
     text-align:center;
     font-size:7vw;
     color: #e03328;
+}
+
+.section-banner
+{
+    padding-top:59px;
+}
+.section
+{
+    max-width:1000px;
+    margin: 0 auto;
+}
+.text-section
+{
+}
+
+.farm-banner
+{
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    height:20vw;
+}
+.farm-banner > div 
+{
+    flex:1;
+}
+.farm
+{
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.farm > div 
+{
+    width:50%;
+    padding:20px;
 }
 
 @media all and (min-width: 321px) 

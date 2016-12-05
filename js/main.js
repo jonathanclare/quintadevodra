@@ -1,7 +1,7 @@
 window.onload = function () 
 { 
-    lazyLoad();
-    on(window, 'scroll resize', debounce(lazyLoad));
+    lazyLoadBackgrounds();
+    on(window, 'scroll resize', debounce(lazyLoadBackgrounds));
  } 
 
 // Remove filename from location.
@@ -20,44 +20,35 @@ function lazyLoad ()
         if(imgTop <= pageBottom)
         {
             img.setAttribute('src', img.getAttribute('data-src'));
-            img.onload = function() {img.removeAttribute('data-src');}
+            img.onload = function() 
+            {
+                img.removeAttribute('data-src');
+                img.className += 'loaded';
+            }
         }
     });
-
-    // Twitter feed.
-    if (!twitterLoaded)
-    {
-        var twitter = document.querySelector('.twitter');
-        var twitterTop = offset + bounds(twitter).top;
-        if(twitterTop <= pageBottom)
-        {   
-            twitterLoaded = true;
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-        }
-    }
-
-    // fb feed.
-    if (!fbLoaded)
-    {
-        var fb = document.querySelector('.twitter');
-        var fbTop = offset + bounds(fb).top;
-        if(fbTop <= pageBottom)
-        {   
-            (function(d, s, id) 
-            {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        }
-    }
 }
 
-function openArea(area) 
+function lazyLoadBackgrounds () 
 {
-    window.location = area + '.html'
+    // Images.
+    var offset = pageOffset().y
+    var pageBottom = offset + viewportHeight();
+    [].forEach.call(document.querySelectorAll('div[data-src]'), function(ele) 
+    {
+        var imgTop = offset + bounds(ele).top;
+        if(imgTop <= pageBottom)
+        {
+            ele.style.backgroundImage = 'url(' + ele.getAttribute('data-src') + ')';
+            ele.className += ' loaded';
+            ele.removeAttribute('data-src');
+        }
+    });
+}
+
+function scrollTo (section) 
+{
+    document.querySelector(section).scrollIntoView();
 }
 
 function on(element, types, listener)
