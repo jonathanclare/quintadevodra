@@ -126,7 +126,7 @@ li a
 {
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
-    height:40vw;
+    height:45vw;
 }
 .banner  > div:nth-child(1) 
 {
