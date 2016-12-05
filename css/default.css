@@ -10,6 +10,8 @@ html
 
 body
 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     margin: 0;
     padding: 0;
 }
@@ -53,11 +55,6 @@ li a
     display: flex;
 }
 
-/* Image ratios to prevent reflow */ 
-.ratio-16-9 {padding-bottom:56.25%;}
-.ratio-4-3 {padding-bottom:75%;}
-.ratio-1-1 {padding-bottom:100%;}
-
 /* Image overlays */
 .overlay 
 {
@@ -66,21 +63,13 @@ li a
     left: 0; 
     right: 0; 
     bottom: 0; 
-    background: rgba(117, 199, 235, 0);
-}
-.overlay:hover
-{
-    background: rgba(117, 199, 235, 0.3);
 }
 
 /* Wrapper */
 .wrapper 
 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
     margin: 0 auto;
-    padding-top:80px;
-    background:#fff;
+    padding-top:60px;
 }
 
 /* Navigation */
@@ -90,8 +79,8 @@ li a
     top: 0;
     right: 0;
     left: 0;
-    height: 80px;
-    line-height: 80px;
+    height: 60px;
+    line-height: 60px;
     z-index: 1000;
     white-space: nowrap;
     background: #000;
@@ -132,52 +121,73 @@ li a
 }
 
 /* banner */
-.row
+.banner
 {
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
+    height:40vw;
 }
-.row > div 
-{
-    overflow:hidden;
-}
-.row > div > img 
-{
-    width: 100%;
-}
-.row  > div:nth-child(1) 
+.banner  > div:nth-child(1) 
 {
     flex:1;
 }
-.row  > div:nth-child(2) 
+.banner  > div:nth-child(2) 
 {
     flex:1;
 }
-.row > div:nth-child(3) 
+.banner > div:nth-child(3) 
 {
     flex:2;
 }
 
-.row1
-{
-    height:15vw;
-}
-.row2
-{
-    height:30vw;
-}
-
-.col
+.banner1
 {
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
 }
-.col > div 
+.banner1 > div 
 {
-    flex: 1;
+    flex:1;
     overflow:hidden;
 }
-.col > div > img 
+.banner1 > div > img 
+{
+    width: 100%;
+}
+
+.banner2
+{
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+}
+.banner2 > div 
+{
+    overflow:hidden;
+}
+.banner2  > div:nth-child(1) 
+{
+    flex:2;
+}
+.banner2 > div:nth-child(2) 
+{
+    flex:1;
+}
+.banner2 > div > img 
+{
+    width: 100%;
+}
+
+.banner3
+{
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+}
+.banner3 > div 
+{
+    flex:1;
+    overflow:hidden;
+}
+.banner3 > div > img 
 {
     width: 100%;
 }
@@ -194,21 +204,21 @@ li a
 .header1
 {
     text-align:center;
-    font-size:4vw;
+    font-size:7vw;
     color:#0083bb;
 
 }
 .header2
 {
     text-align:center;
-    font-size:3vw;
+    font-size:4vw;
     font-style: italic;
     color:#fcbc3b;
 }
 .header3
 {
     text-align:center;
-    font-size:4vw;
+    font-size:7vw;
     color: #e03328;
 }
 
