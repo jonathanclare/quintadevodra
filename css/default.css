@@ -65,15 +65,31 @@ li a
     bottom: 0; 
 }
 
+/* Background images */
+.img
+{
+    opacity: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition-property: opacity; 
+    transition-duration: 0.5s; 
+    transition-timing-function: ease-in;
+}
+.img.loaded
+{
+    opacity: 1;
+}
+
 /* Wrapper */
-.wrapper 
+/*.wrapper 
 {
     margin: 0 auto;
     padding-top:60px;
-}
+}*/
 
 /* Navigation */
-.nav 
+/*.nav 
 {
     position: fixed;
     top: 0;
@@ -118,33 +134,16 @@ li a
 {
     border-color: #fcbc3b;
     color: #fcbc3b;
-}
-
-/* Images */
-.img
-{
-    opacity: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    transition-property: opacity; 
-    transition-duration: 0.5s; 
-    transition-timing-function: ease-in;
-}
-.img.loaded
-{
-    opacity: 1;
-}
-
+}*/
 
 /* banner */
-.banner
+/*.banner
 {
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
     height:45vw;
 }
-.banner  > div:nth-child(1) 
+.banner > div:nth-child(1) 
 {
     flex:1;
 }
@@ -187,9 +186,6 @@ li a
 {
     flex:1;
 }
-
-
-/* headers */
 .header
 {
     -webkit-flex-flow: column nowrap;
@@ -217,7 +213,197 @@ li a
     text-align:center;
     font-size:7vw;
     color: #e03328;
+}*/
+
+
+/* Wrapper */
+.wrapper 
+{
+    margin: 0 auto;
+    padding-top:8vh;
 }
+
+/* Nav */
+.nav 
+{
+    font-size:3vh;
+    height: 8vh;
+    line-height: 8vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    white-space: nowrap;
+    background: #000;
+
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+}
+.nav a, .nav img
+{
+    padding: 0px 3vw;
+    color:inherit;
+}
+.nav img
+{ 
+    height: 4vh;
+    vertical-align: middle;
+}
+.nav li
+{
+    color: #fff;
+    border-bottom: 4px solid #000;
+    transition-property: color, background, border-color; 
+    transition-duration: 0.3s, 0.3s, 0.3s; 
+    transition-timing-function: ease-in;
+}
+.nav li:not(:first-child):hover
+{
+    color: #fcbc3b;
+    background: #e03328;
+    border-color: #fcbc3b;
+}
+.nav li.active
+{
+    border-color: #fcbc3b;
+    color: #fcbc3b;
+}
+
+/* Nav */
+.footer 
+{
+    font-size:3vh;
+    height: 8vh;
+    line-height: 8vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    white-space: nowrap;
+    background: #000;
+
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+}
+.footer a, .footer img
+{
+    padding: 0px 3vw;
+    color:inherit;
+}
+.footer img
+{ 
+    height: 4vh;
+    vertical-align: middle;
+}
+.footer li
+{
+    color: #fff;
+    border-bottom: 4px solid #000;
+    transition-property: color, background, border-color; 
+    transition-duration: 0.3s, 0.3s, 0.3s; 
+    transition-timing-function: ease-in;
+}
+.footer li:hover
+{
+    color: #fcbc3b;
+    background: #e03328;
+    border-color: #fcbc3b;
+}
+.footer li.active
+{
+    border-color: #fcbc3b;
+    color: #fcbc3b;
+}
+
+
+/* Banner */
+.banner
+{
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    height:84vh;
+}
+.banner > div:nth-child(1) 
+{
+    flex:2;
+}
+.banner  > div:nth-child(2) 
+{
+    flex:1;
+}
+.banner > div:nth-child(3) 
+{
+    flex:1;
+}
+.banner1
+{
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+}
+.banner1 > div 
+{
+    flex:1;
+}
+.banner2
+{
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+}
+.banner2  > div:nth-child(1) 
+{
+    flex:1;
+}
+.banner2 > div:nth-child(2) 
+{
+    flex:0;
+}
+.banner3
+{
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+}
+.banner3 > div 
+{
+    flex:1;
+}
+.header
+{
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    font-family: 'Open Sans Condensed', sans-serif;
+    justify-content:center;
+    align-items:center;
+    background-color:#fff;
+}
+.header1
+{
+    padding:2vh;
+    text-align:center;
+    font-size:9vh;
+    color:#0083bb;
+}
+.header2
+{
+    padding:2vh;
+    text-align:center;
+    font-size:6vh;
+    font-style: italic;
+    color:#fcbc3b;
+}
+.header3
+{
+    padding:2vh;
+    text-align:center;
+    font-size:9vh;
+    color: #e03328;
+}
+
 
 .section-banner
 {
