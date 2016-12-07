@@ -272,7 +272,7 @@ li a
     color: #fcbc3b;
 }
 
-/* Nav */
+/* Footer */
 .footer 
 {
     font-size:3vh;
@@ -284,12 +284,9 @@ li a
     left: 0;
     z-index: 1000;
     white-space: nowrap;
-    background: #000;
 
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
-    justify-content: center;
-    align-content: center;
 }
 .footer a, .footer img
 {
@@ -298,27 +295,32 @@ li a
 }
 .footer img
 { 
-    height: 4vh;
+    height: 6vh;
     vertical-align: middle;
 }
-.footer li
+#contact
 {
+    text-align: center;
+    background: #5b8fb7;
     color: #fff;
-    border-bottom: 4px solid #000;
-    transition-property: color, background, border-color; 
-    transition-duration: 0.3s, 0.3s, 0.3s; 
-    transition-timing-function: ease-in;
+    border-bottom: 4px solid #5b8fb7;
+    transition-property: color, border-color; 
+    transition-duration: 0.2s, 0.2s, 0.2s; 
+    transition-timing-function: ease-in, ease-in;
+    flex: 1; 
 }
-.footer li:hover
+#contact:hover
 {
     color: #fcbc3b;
-    background: #e03328;
     border-color: #fcbc3b;
 }
-.footer li.active
+#facebook
 {
-    border-color: #fcbc3b;
-    color: #fcbc3b;
+    background:#3b5998;
+}
+#airbnb
+{
+    background:#ff5a5f;
 }
 
 
