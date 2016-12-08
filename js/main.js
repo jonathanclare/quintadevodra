@@ -1,20 +1,21 @@
 window.onload = function () 
 { 
+    onScroll();
+    on(window, 'scroll resize', debounce(onScroll));
+} 
+
+function onScroll()
+{
     lazyLoadBackgrounds();
-    on(window, 'scroll resize', debounce(lazyLoadBackgrounds));
- } 
+    //highlightActiveSection();
+}
 
-// Remove filename from location.
-//history.replaceState({}, document.title, '.');
-var twitterLoaded = false;
-var fbLoaded = false;
-
-function lazyLoad () 
+function lazyLoadImages () 
 {
     // Images.
     var offset = pageOffset().y
     var pageBottom = offset + viewportHeight();
-    [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) 
+    [].forEach.call(getElements('img[data-src]'), function(img) 
     {
         var imgTop = offset + bounds(img).top;
         if(imgTop <= pageBottom)
@@ -29,12 +30,30 @@ function lazyLoad ()
     });
 }
 
+function highlightActiveSection ()
+{
+    // Images.
+    var offset = pageOffset().y
+    var pageBottom = offset + viewportHeight();
+    [].forEach.call(getElements('div[data-src]'), function(ele) 
+    {
+        var imgTop = offset + bounds(ele).top;
+        if(imgTop <= pageBottom)
+        {
+            ele.style.backgroundImage = 'url(' + ele.getAttribute('data-src') + ')';
+            ele.className += ' loaded';
+            ele.removeAttribute('data-src');
+        }
+    });
+
+}
+
 function lazyLoadBackgrounds () 
 {
     // Images.
     var offset = pageOffset().y
     var pageBottom = offset + viewportHeight();
-    [].forEach.call(document.querySelectorAll('div[data-src]'), function(ele) 
+    [].forEach.call(getElements('div[data-src]'), function(ele) 
     {
         var imgTop = offset + bounds(ele).top;
         if(imgTop <= pageBottom)
@@ -46,9 +65,29 @@ function lazyLoadBackgrounds ()
     });
 }
 
-function scrollTo (section) 
+function getElement (selector)
 {
-    document.querySelector(section).scrollIntoView();
+    return document.querySelector(selector);
+};
+
+function getElements (selector)
+{
+    return document.querySelectorAll(selector);
+};
+
+function addClass (element, className)
+{
+    ele.className += ' loaded';
+}
+
+function removeClass (element, className)
+{
+    element.className =  element.className.replace(/(?:^|\s)className(?!\S)/g , '');
+}
+
+function hasClass (element, className)
+{
+    return element.className.match(/(?:^|\s)className(?!\S)/);
 }
 
 function on(element, types, listener)
