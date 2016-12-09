@@ -23,74 +23,78 @@
     </head>
     <body>
         <div class="wrapper">
-            <!--ul class="nav flex-box">  
-                <li><img src="./img/house-logo-multi.png" /></li>
-                <li class="active"><a href="#" onclick="return false;">The House</a></li>
-                <li><a href="#" onclick="scrollTo('.farm-banner');return false;">The Farm</a></li>
-                <li><a href="#" onclick="return false;">The Region</a></li>
-                <li><a href="#" onclick="return false;">Enquire</a></li>
-            </ul-->
-            <!--div class="banner flex-box">
-                <div class="banner1 flex-box">
-                    <div class="lazyload" data-src="./img/veg3.jpg"></div>
-                    <div class="lazyload" data-src="./img/flowers2.jpg"></div>
-                    <div class="lazyload" data-src="./img/grapes2.jpg"></div>
-                </div>
-                <div class="banner2 flex-box">
-                    <div class="header flex-box">
-                        <div class="header1">QUINTA</div>
-                        <div class="header2">~ de ~</div>
-                        <div class="header3">VODRA</div>
-                    </div>
-                    <div class="lazyload" data-src="./img/stream5.jpg"></div>
-                </div>
-                <div class="banner3 flex-box">
-                    <div class="lazyload" data-src="./img/house4.jpg"></div>
-                </div>
-            </div-->
-            <ul class="nav flex-box">  
-                <li><a href="#"><img src="./img/house-logo-multi.png" /></a></li>
-                <li><a href="#house">The House</a></li>
-                <li><a href="#farm">The Farm</a></li>
-                <li><a href="#region">The Region</a></li>
-            </ul>
 
-            <div class="banner flex-box">
-                <div class="banner1 flex-box">
-                    <div class="lazyload" data-src="./img/house4.jpg"></div>
-                </div>
-                <div class="banner2 flex-box">
-                    <div class="header flex-box">
-                        <div class="header1">QUINTA</div>
-                        <div class="header2">~ de ~</div>
-                        <div class="header3">VODRA</div>
-                    </div>
-                    <div class="lazyload" data-src="./img/stream5.jpg"></div>
-                </div>
-                <div class="banner3 flex-box">
-                    <div class="lazyload" data-src="./img/veg3.jpg"></div>
-                    <div class="lazyload" data-src="./img/flowers2.jpg"></div>
-                    <div class="lazyload" data-src="./img/grapes2.jpg"></div>
-                </div>
-            </div>
-
-            <div id="house" class="section">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-            </div>
-
-            <div id="farm" class="section">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+            <div class="flex-box nav header">  
+                <a class="nav-icon" href="#"><img src="./img/house-logo-multi.png" /></a>
+                <a class="nav-link" href="#house">The House</a>
+                <a class="nav-link" href="#farm">The Farm</a>
+                <a class="nav-link" href="#region">The Region</a>
             </div>
             
-            <div id="region" class="section">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+            <div class="flex-box nav footer">  
+                <a class="nav-link" href="#contact" onclick="return false;">Enquiries & Booking</a>
+                <a class="nav-icon" id="airbnb" href="#"><img src="./img/airbnb.png" /></a>
+                <a class="nav-icon" id="facebook" href="#"><img src="./img/facebook.png" /></a>
+            </div>
+
+            <div class="flex-box banner">
+                <div class="flex-box banner1">
+                    <div class="bg-img" data-src="./img/house4.jpg"></div>
+                </div>
+                <div class="flex-box banner2">
+                    <div class="title flex-box">
+                        <div>QUINTA</div>
+                        <div>~ de ~</div>
+                        <div>VODRA</div>
+                    </div>
+                    <div class="bg-img" data-src="./img/stream5.jpg"></div>
+                </div>
+                <div class="flex-box banner3">
+                    <div class="bg-img" data-src="./img/veg3.jpg"></div>
+                    <div class="bg-img" data-src="./img/flowers2.jpg"></div>
+                    <div class="bg-img" data-src="./img/grapes2.jpg"></div>
+                </div>
+            </div>
+
+            <div id="house">
+                <div class="section">
+                    <div class="section-header">The House</div>
+                    <div class="flex-box section-banner">
+                        <div class="bg-img" data-src="./img/farm1.jpg"></div>
+                        <div class="bg-img" data-src="./img/house3.jpg"></div>
+                        <div class="bg-img" data-src="./img/farm2.jpg"></div>
+                    </div>
+                    <div class="section-content">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum quis dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="farm">
+                <div class="section">
+                    <div class="section-header">The Farm</div>
+                    <div class="flex-box section-banner">
+                        <div class="bg-img" data-src="./img/veg1.jpg"></div>
+                        <div class="bg-img" data-src="./img/vineyard2.jpg"></div>
+                        <div class="bg-img" data-src="./img/grapes1.jpg"></div>
+                    </div>
+                    <div class="section-content">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum quis dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                    </div>
+                </div>
             </div>
             
-            <div class="footer flex-box">  
-                <div id="contact"><a href="#" onclick="return false;">Contact Us</a></div>
-                <div class="flex-box">  
-                    <div id="airbnb"><img src="./img/airbnb.png" /></div>
-                    <div id="facebook"><img src="./img/facebook.png" /></div>
+            <div id="region">
+                <div class="section">
+                    <div class="section-header">The Region</div>
+                    <div class="flex-box section-banner">
+                        <div class="bg-img" data-src="./img/mountains1.jpg"></div>
+                        <div class="bg-img" data-src="./img/mountains3.jpg"></div>
+                        <div class="bg-img" data-src="./img/vineyard2.jpg"></div>
+                    </div>
+                    <div class="section-content">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum quis dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                    </div>
                 </div>
             </div>
         </div>
