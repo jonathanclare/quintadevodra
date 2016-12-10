@@ -84,14 +84,16 @@ body
     left: 0;
     z-index: 1000;
     white-space: nowrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 .nav-link, .nav-icon
 {
+    text-align:center;
     padding: 0px 2vw;
 }
 .nav-link
 {
+    flex:1;
     text-decoration: none;
     color:#fff;
 }
@@ -103,6 +105,7 @@ body
 }
 .nav-icon
 {
+    flex:0 0 8vh;
     opacity: 0.9;
 }
 .nav-icon:hover
@@ -266,9 +269,9 @@ body
 }
 @media all and (min-width: 481px) 
 {
-    .nav
+    .nav-link
     {
-        justify-content: center;
+        flex:0;
     }
     /* iPadPortrait */
     /*body  {background:green;}*/
