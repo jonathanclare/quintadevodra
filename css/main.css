@@ -97,22 +97,16 @@ body
     text-decoration: none;
     color:#fff;
     border-bottom: 4px solid #000;
-    transition-property: color, background, border-color; 
-    transition-duration: 0.1s, 0.1s, 0.1s; 
-    transition-timing-function: ease-in, ease-in, ease-in;
 }
 .nav-link:hover
 {
     color: #fcbc3b;
-    background: #222326;
+    background: rgba(255, 255, 255, 0.2);
     border-color: #fcbc3b;
 }
 .nav-icon
 {
     opacity: 0.9;
-    transition-property: color; 
-    transition-duration: 0.1s; 
-    transition-timing-function: ease-in;
 }
 .nav-icon:hover
 {
@@ -185,8 +179,8 @@ body
 /* Sections */
 .section
 {
-    /*max-width:1000px;*/
     margin: 0 auto;
+    max-width:1000px;
     padding: 8vh 0 8vh 0; 
     /*margin-top: -8vh; */
 }
@@ -207,7 +201,6 @@ body
 }
 .section-banner
 {
-
 }
 .section-banner > div 
 {
