@@ -84,9 +84,7 @@ body
     left: 0;
     z-index: 1000;
     white-space: nowrap;
-    -webkit-flex-flow: row nowrap;
-    flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 .nav-link, .nav-icon
 {
@@ -96,13 +94,12 @@ body
 {
     text-decoration: none;
     color:#fff;
-    border-bottom: 4px solid #000;
 }
 .nav-link:hover
 {
     color: #fcbc3b;
     background: rgba(255, 255, 255, 0.2);
-    border-color: #fcbc3b;
+    border-bottom: 4px solid #fcbc3b;
 }
 .nav-icon
 {
@@ -258,7 +255,7 @@ body
     }
     .section-banner
     {
-        height:40vw;
+        height:33vw;
     }
 }
 
@@ -269,6 +266,10 @@ body
 }
 @media all and (min-width: 481px) 
 {
+    .nav
+    {
+        justify-content: center;
+    }
     /* iPadPortrait */
     /*body  {background:green;}*/
 }
