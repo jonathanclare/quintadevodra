@@ -89,7 +89,6 @@ body
 .nav-link, .nav-icon
 {
     text-align:center;
-    padding: 0px 2vw;
 }
 .nav-link
 {
@@ -269,6 +268,10 @@ body
 }
 @media all and (min-width: 481px) 
 {
+    .nav-link, .nav-icon
+    {
+        padding: 0px 2vw;
+    }
     .nav-link
     {
         flex:0;
