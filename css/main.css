@@ -52,7 +52,7 @@ body
 /* Background images */
 .bg-img
 {
-    opacity: 0;
+    /*opacity: 0;*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -62,7 +62,7 @@ body
 }
 .bg-img.loaded
 {
-    opacity: 1;
+    /*opacity: 1;*/
 }
 
 /* Wrapper */
@@ -78,7 +78,7 @@ body
     font-size:14px;
     height: 8vh;
     line-height: 8vh;
-    background: #000;
+    background: #e03328;
     position: fixed;
     right: 0;
     left: 0;
@@ -95,24 +95,25 @@ body
     flex:1;
     text-decoration: none;
     color:#fff;
+    opacity:0.8;
 }
 .nav-link:hover
 {
-    color: #fcbc3b;
-    background: rgba(255, 255, 255, 0.2);
+    opacity:1;
+    background: rgba(255, 255, 255, 0.1);
     border-bottom: 4px solid #fcbc3b;
 }
 .nav-icon
 {
     flex:0 0 8vh;
-    opacity: 0.9;
 }
-.nav-icon:hover
+.nav-icon:hover img 
 {
-    opacity: 1;
+    opacity: 1
 }
 .nav-icon img
 {
+    opacity: 0.7;
     height: 4vh;
     vertical-align: middle;
 }
@@ -121,6 +122,14 @@ body
 .header
 {
     top: 0;
+}
+#home
+{
+    opacity: 0.5;
+}
+#home:hover
+{
+    opacity: 1;
 }
 
 /* Footer */
