@@ -10,8 +10,6 @@ html
 
 body
 {
-    font-family: 'Open Sans', sans-serif;
-    color:#666;
     margin: 0;
     padding: 0;
 }
@@ -92,6 +90,7 @@ body
 }
 .nav-link
 {
+    font-family: 'Open Sans', sans-serif;
     flex:1;
     text-decoration: none;
     color:#fff;
@@ -185,26 +184,32 @@ body
 }
 
 /* Sections */
+
+
 .section
 {
+    border-bottom: 4px solid #fcbc3b;
     margin: 0 auto;
     max-width:1000px;
     padding: 8vh 0 8vh 0; 
-    /*margin-top: -8vh; */
+    /*margin-top: -8vh;*/
 }
 .section-header
 {
-    color:#000;
-    text-align:center;
     font-family: 'Open Sans Condensed', sans-serif;
+    color:#444;
+    text-align:center;
     padding:20px; 
 }
 .section-content
 {
+    font-family: 'Merriweather', serif;
     font-size:18px;
-    color:rgba(0, 0, 0, 0.8);
+    font-style: lightest;
+    color:#666;
+    line-height: 30px;
     margin: 0 auto;
-    max-width:740px;
+    max-width:760px;
     padding:20px;  
 }
 .section-banner
