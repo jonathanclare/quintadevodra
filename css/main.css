@@ -205,7 +205,6 @@ body
 {
     font-family: 'Merriweather', serif;
     font-size:18px;
-    font-style: lightest;
     color:#666;
     line-height: 30px;
     margin: 0 auto;
@@ -238,7 +237,7 @@ body
 {
     .title > div:nth-child(1), .title > div:nth-child(3), .section-header
     { 
-        font-size:11vh;
+        font-size:10vh;
     }
     .title > div:nth-child(2) 
     {
@@ -275,13 +274,25 @@ body
     }
 }
 
-@media all and (min-width: 321px) 
+@media all and (max-width: 320px) /* Mobile S - 320px */
 {
-    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide */
-    /*body  {background:red;}*/
+    body  {background:pink;}
 }
-@media all and (min-width: 481px) 
+@media all and (min-width: 321px) /* Mobile M - 375px */
 {
+    body  {background:red;}
+}
+@media all and (min-width: 376px) /* Mobile L - 425px */
+{
+    body  {background:brown;}
+}
+@media all and (min-width: 426px)  /* Tablet - 768px */
+{
+    body  {background:green;}
+}
+@media all and (min-width: 769px)   /* Laptop - 1024px */
+{
+    body  {background:blue;}
     .nav-link, .nav-icon
     {
         padding: 0px 2vw;
@@ -290,25 +301,10 @@ body
     {
         flex:0;
     }
-    /* iPadPortrait */
-    /*body  {background:green;}*/
 }
-@media all and (min-width: 641px) 
+@media all and (min-width: 1025px) /* Laptop L - 1440px  */
 {
-    /* iPadLandscape */
-    /*body  {background:blue;}*/
-}
-@media all and (min-width: 961px) 
-{
-    /* laptop */
-    /*body  {background:purple;}*/
-}
-@media all and (min-width: 1025px) 
-{
-    /* laptops and desktops */
-    /*body  {background:pink;}*/
-
-    /* Banner */
+    body  {background:goldenrod;}
     .banner
     {
         -webkit-flex-flow: row-reverse nowrap;
@@ -336,13 +332,7 @@ body
         font-size:16px;
     }
 }
-@media all and (min-width: 1281px) 
+@media all and (min-width: 1441px) /* 4k */
 {
-    /* hi-res laptops and desktops */
-    /*body  {background:brown;}*/
-}
-@media all and (min-width: 1601px) 
-{
-    /* widescreen */
-    /*body  {background:indigo;}*/
+    body  {background:indigo;}
 }
