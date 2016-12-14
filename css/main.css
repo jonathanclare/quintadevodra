@@ -276,23 +276,23 @@ body
 
 @media all and (max-width: 320px) /* Mobile S - 320px */
 {
-    body  {background:pink;}
+    /*body  {background:pink;}*/
 }
 @media all and (min-width: 321px) /* Mobile M - 375px */
 {
-    body  {background:red;}
+    /*body  {background:red;}*/
 }
 @media all and (min-width: 376px) /* Mobile L - 425px */
 {
-    body  {background:brown;}
+    /*body  {background:brown;}*/
 }
 @media all and (min-width: 426px)  /* Tablet - 768px */
 {
-    body  {background:green;}
+    /*body  {background:green;}*/
 }
 @media all and (min-width: 769px)   /* Laptop - 1024px */
 {
-    body  {background:blue;}
+    /*body  {background:blue;}*/
     .nav-link, .nav-icon
     {
         padding: 0px 2vw;
@@ -304,7 +304,7 @@ body
 }
 @media all and (min-width: 1025px) /* Laptop L - 1440px  */
 {
-    body  {background:goldenrod;}
+    /*body  {background:goldenrod;}*/
     .banner
     {
         -webkit-flex-flow: row-reverse nowrap;
@@ -334,5 +334,5 @@ body
 }
 @media all and (min-width: 1441px) /* 4k */
 {
-    body  {background:indigo;}
+    /*body  {background:indigo;}*/
 }
