@@ -91,7 +91,6 @@ body
 .nav-link
 {
     font-family: 'Open Sans', sans-serif;
-    flex:1;
     text-decoration: none;
     color:#fff;
     opacity:0.8;
@@ -104,7 +103,7 @@ body
 }
 .nav-icon
 {
-    flex:0 0 8vh;
+    width:8vh;
 }
 .nav-icon:hover img 
 {
@@ -274,6 +273,14 @@ body
     }
 }
 
+@media all and (max-width: 768px)   /* Laptop - 1024px */
+{
+    /*body  {background:blue;}*/
+    .nav-link
+    {
+        flex:1;
+    }
+}
 @media all and (max-width: 320px) /* Mobile S - 320px */
 {
     /*body  {background:pink;}*/
@@ -293,13 +300,9 @@ body
 @media all and (min-width: 769px)   /* Laptop - 1024px */
 {
     /*body  {background:blue;}*/
-    .nav-link, .nav-icon
-    {
-        padding: 0px 2vw;
-    }
     .nav-link
     {
-        flex:0;
+        padding: 0px 2vw;
     }
 }
 @media all and (min-width: 1025px) /* Laptop L - 1440px  */
