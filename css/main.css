@@ -70,12 +70,13 @@ body
     padding-top:8vh;
 }
 
-/* Nav */
+/* Navbars */
 .nav 
 {
+    font-family: 'Open Sans', sans-serif;
     font-size:16px;
     height: 8vh;
-    background: #e03328;
+    background-color: #e03328;
     position: fixed;
     right: 0;
     left: 0;
@@ -90,14 +91,13 @@ body
 }
 .nav-link
 {
-    font-family: 'Open Sans', sans-serif;
     text-decoration: none;
-    color:#fff;
-    opacity:0.8;
+    color: rgba(255, 255, 255, 0.8);
+    flex:1;
 }
 .nav-link:hover
 {
-    opacity:1;
+    color: rgba(255, 255, 255, 1);
     background: rgba(255, 255, 255, 0.1);
 }
 .nav-icon
@@ -108,32 +108,21 @@ body
 {
     opacity: 0.7;
     height: 4vh;
-    vertical-align: middle;
 }
 .nav-icon:hover img 
 {
     opacity: 1
 }
-
-/* Header */
 .header
 {
     top: 0;
 }
-#home img
-{
-    opacity: 0.5;
-}
-#home:hover img
-{
-    opacity: 1;
-}
-
-/* Footer */
 .footer 
 {
     bottom: 0;
 }
+
+/* Icon Links */
 #facebook
 {
     background:#3b5998;
@@ -158,40 +147,53 @@ body
 {
     flex:1;
 }
+
+/* Banner Title */
 .title
 {
     font-family: 'Open Sans Condensed', sans-serif;
     justify-content:center;
     align-items:center;
 }
+.title > div
+{
+    padding:1vw;
+}
 .title > div:nth-child(1) 
 {
-    font-size:11vw;
+    font-size:12vw;
     color:#0083bb;
 }
 .title > div:nth-child(2) 
 {
-    font-size:8vw;
+    font-size:9vw;
     font-style: italic;
     color:#fcbc3b;
 }
 .title > div:nth-child(3) 
 {
-    font-size:11vw;
+    font-size:12vw;
     color: #e03328;
 }
 
 /* Sections */
 .section
 {
-    border-bottom: 4px solid #fcbc3b;
     margin: 0 auto;
     max-width:1000px;
     padding: 8vh 0 8vh 0; 
-    /*margin-top: -8vh;*/
+}
+.section-banner
+{
+    height:35vw;
+}
+.section-banner > div 
+{
+    flex:1;
 }
 .section-header
 {
+    font-size:12vw;
     font-family: 'Open Sans Condensed', sans-serif;
     color:#444;
     text-align:center;
@@ -207,14 +209,6 @@ body
     max-width:760px;
     padding:20px;  
 }
-.section-banner
-{
-}
-.section-banner > div 
-{
-    flex:1;
-}
-
 #house
 {
 
@@ -228,33 +222,8 @@ body
 
 }
 
-/* Portrait */
-@media (orientation:portrait) 
-{
-    .title > div:nth-child(1), .title > div:nth-child(3), .section-header
-    { 
-        font-size:12vw;
-    }
-    .title > div:nth-child(2) 
-    {
-        font-size:9vw;
-    }
-    .title > div
-    {
-        padding:2vw;  
-    }
-    .section-banner
-    {
-        height:33vw;
-    }
-    .nav-link
-    {
-        flex:1;
-    }
-}
-
-/* Landscape */
-@media (orientation:landscape) 
+/* Responsive Design */
+@media (orientation:landscape) /* Landscape */
 {
     .title > div:nth-child(1), .title > div:nth-child(3), .section-header
     { 
@@ -266,13 +235,8 @@ body
     }
     .title > div
     {
-        padding:1vw;  
+        padding:1vw;
     }
-    .section-banner
-    {
-        height:40vh;
-    }
-
     .banner
     {
         -webkit-flex-flow: row-reverse nowrap;
@@ -291,45 +255,45 @@ body
     {
         flex:1;
     }
-    .title > div 
-    {
-        padding:0px;
-    }
     .nav-link
     {
+        flex:0;
         padding: 0px 2vw;
     }
 }
-
-@media all and (max-width: 768px)   /* Laptop - 1024px */
+@media (orientation:portrait) /* Portrait */
 {
-    /*body  {background:blue;}*/
+    
+}
+@media all and (max-width: 768px) /* Laptop - 1024px */
+{
+
 }
 @media all and (max-width: 320px) /* Mobile S - 320px */
 {
-    /*body  {background:pink;}*/
+
 }
 @media all and (min-width: 321px) /* Mobile M - 375px */
 {
-    /*body  {background:red;}*/
+
 }
 @media all and (min-width: 376px) /* Mobile L - 425px */
 {
-    /*body  {background:brown;}*/
+
 }
-@media all and (min-width: 426px)  /* Tablet - 768px */
+@media all and (min-width: 426px) /* Tablet - 768px */
 {
-    /*body  {background:green;}*/
+
 }
-@media all and (min-width: 769px)   /* Laptop - 1024px */
+@media all and (min-width: 769px) /* Laptop - 1024px */
 {
-    /*body  {background:blue;}*/
+
 }
 @media all and (min-width: 1025px) /* Laptop L - 1440px  */
 {
-    /*body  {background:goldenrod;}*/
+
 }
 @media all and (min-width: 1441px) /* 4k */
 {
-    /*body  {background:indigo;}*/
+
 }
