@@ -25,6 +25,15 @@
     <body>
         <div class="wrapper">
 
+            <div class="modal"> 
+                <div class="flex-box noselect modal-close" onclick="closeSlides()">&times;</div>
+                <div class="flex-box noselect modal-prev" onclick="prevSlide()">&#10094;</div>
+                <div class="flex-box noselect modal-next" onclick="nextSlide()">&#10095;</div>
+                <div class="flex-box noselect modal-slide" onclick="nextSlide()">
+                    <img src="./img/vineyard2.jpg" />
+                </div>
+            </div>
+
             <div class="flex-box nav header">  
                 <a class="flex-box nav-icon" id="home" href="#"><img src="./img/house-logo-white.png" /></a>
                 <a class="flex-box nav-link" href="#house">About</a>
@@ -33,7 +42,7 @@
             </div>
             
             <div class="flex-box nav footer">  
-                <a class="flex-box nav-link" href="#contact" onclick="return false;">Bookings & Enquiries</a>
+                <a class="flex-box nav-link" href="#contact" onclick="return false;">Booking & Enquiries</a>
                 <a class="flex-box nav-icon" id="airbnb" href="#"><img src="./img/airbnb.png" /></a>
                 <a class="flex-box nav-icon" id="facebook" href="#"><img src="./img/facebook.png" /></a>
             </div>
@@ -44,9 +53,7 @@
                 </div>
                 <div class="flex-box banner2">
                     <div class="title flex-box">
-                        <div>QUINTA</div>
-                        <div>~ de ~</div>
-                        <div>VODRA</div>
+                        <div>QUINTA</div><div>~ de ~</div><div>VODRA</div>
                     </div>
                     <div class="bg-img" data-src="./img/stream5.jpg"></div>
                 </div>

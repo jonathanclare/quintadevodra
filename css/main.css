@@ -14,16 +14,6 @@ body
     padding: 0;
 }
 
-/* Stop text selection */
-.no-user-select
-{
-    -webkit-touch-callout: none;    
-    -webkit-user-select: none; 
-    -khtml-user-select: none;
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none;
-}
 
 /* Flexbox defaults */
 .flex-box
@@ -37,14 +27,24 @@ body
     flex-flow: row nowrap;
 }
 
-/* Image overlays */
-.overlay 
+/* Prevent tap highlight */
+.noselect 
 {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+/* Wrapper */
+.wrapper 
+{
+    margin: 0 auto;
+    padding-top:8vh;
 }
 
 /* Background images */
@@ -61,13 +61,6 @@ body
 .bg-img.loaded
 {
     /*opacity: 1;*/
-}
-
-/* Wrapper */
-.wrapper 
-{
-    margin: 0 auto;
-    padding-top:8vh;
 }
 
 /* Navbars */
@@ -94,6 +87,7 @@ body
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
     flex:1;
+    transition: 0.3s ease;
 }
 .nav-link:hover
 {
@@ -108,6 +102,7 @@ body
 {
     opacity: 0.7;
     height: 4vh;
+    transition: 0.3s ease;
 }
 .nav-icon:hover img 
 {
@@ -174,6 +169,69 @@ body
 {
     font-size:12vw;
     color: #e03328;
+}
+
+/* Slideshow modal */
+.modal 
+{
+    z-index: 2000;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.9);
+}
+.modal-slide 
+{
+    z-index: 2001;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    align-items:center;
+    justify-content: center;
+    cursor: pointer;
+}
+.modal-slide img 
+{
+    max-height: 100%;
+    max-width: 100%;
+}
+.modal-close, .modal-prev, .modal-next 
+{
+    position: absolute;
+    top: 0;
+    align-items:center;
+    cursor: pointer;
+    font-size:8vh;
+    padding:2vh;
+    width: 10vh;
+    color:#fff;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+.modal-prev, .modal-next
+{
+    z-index: 2002;
+    bottom:0;
+} 
+.modal-prev
+{
+    left: 0;
+} 
+.modal-next 
+{
+    right: 0;
+}
+.modal-close 
+{
+    z-index: 2003;
+    justify-content: center;
+    font-weight:bold;
+    right: 0;
+    height: 10vh;
 }
 
 /* Sections */
