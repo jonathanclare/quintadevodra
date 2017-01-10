@@ -31,13 +31,11 @@ body
 .noselect 
 {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-     -khtml-user-select: none; /* Konqueror */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  not supported by any browser */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 /* Wrapper */
@@ -50,17 +48,12 @@ body
 /* Background images */
 .bg-img
 {
-    /*opacity: 0;*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     transition-property: opacity; 
     transition-duration: 0.5s; 
     transition-timing-function: ease-in;
-}
-.bg-img.loaded
-{
-    /*opacity: 1;*/
 }
 
 /* Navbars */
@@ -69,6 +62,7 @@ body
     font-family: 'Open Sans', sans-serif;
     font-size:16px;
     height: 8vh;
+    min-height: 40px;
     background-color: #e03328;
     position: fixed;
     right: 0;
@@ -79,6 +73,7 @@ body
 }
 .nav-link, .nav-icon
 {
+    cursor:pointer;
     justify-content: center;
     align-items:center;
 }
@@ -97,11 +92,14 @@ body
 .nav-icon
 {
     width:8vh;
+    min-width: 40px;
+    padding:2vh;
 }
 .nav-icon img
 {
     opacity: 0.7;
-    height: 4vh;
+    max-height: 100%;
+    max-width: 100%;
     transition: 0.3s ease;
 }
 .nav-icon:hover img 
@@ -136,6 +134,7 @@ body
 }
 .banner1
 {
+    position: relative; /* So 'View Photos' button can be positioned relative to this */
     flex:2;
 }
 .banner1 > div, .banner2, .banner2  > div:nth-child(1), .banner3, .banner3 > div
@@ -172,6 +171,33 @@ body
 }
 
 /* Slideshow modal */
+.modal-btn 
+{
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+
+    border-radius: 4px;
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+
+    border-color: #c4c4c4;
+    background: white;
+    color: #484848;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 7px 21px;
+    font-size: 13px;
+}
+.modal-btn:hover, .modal-btn:focus 
+{
+    border-color: #aaa;
+    color: #484848;
+}
 .modal 
 {
     z-index: 2000;
@@ -182,6 +208,11 @@ body
     bottom: 0; 
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.9);
+
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    color:#fff;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 .modal-slide 
 {
@@ -200,20 +231,27 @@ body
     max-height: 100%;
     max-width: 100%;
 }
+.modal-text 
+{
+    position: absolute;
+    bottom: 0;
+    align-items:center;
+    font-size:16px;
+    padding:2vh;
+}
 .modal-close, .modal-prev, .modal-next 
 {
     position: absolute;
     top: 0;
     align-items:center;
+    justify-content: center;
     cursor: pointer;
-    font-size:8vh;
     padding:2vh;
     width: 10vh;
-    color:#fff;
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 .modal-prev, .modal-next
 {
+    font-size:5vh;
     z-index: 2002;
     bottom:0;
 } 
@@ -227,9 +265,8 @@ body
 }
 .modal-close 
 {
+    font-size:8vh;
     z-index: 2003;
-    justify-content: center;
-    font-weight:bold;
     right: 0;
     height: 10vh;
 }
@@ -258,11 +295,10 @@ body
     padding:20px; 
 }
 .section-content
-{
+{   
+    -webkit-font-smoothing: antialiased;
     font-family: 'Merriweather', serif;
-    font-size:18px;
-    color:#666;
-    line-height: 30px;
+    font-size:12px;
     margin: 0 auto;
     max-width:760px;
     padding:20px;  

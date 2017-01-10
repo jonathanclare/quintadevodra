@@ -25,20 +25,21 @@
     <body>
         <div class="wrapper">
 
-            <div class="modal"> 
-                <div class="flex-box noselect modal-close" onclick="closeSlides()">&times;</div>
-                <div class="flex-box noselect modal-prev" onclick="prevSlide()">&#10094;</div>
-                <div class="flex-box noselect modal-next" onclick="nextSlide()">&#10095;</div>
-                <div class="flex-box noselect modal-slide" onclick="nextSlide()">
+            <!--div class="modal noselect"> 
+                <div class="flex-box modal-close" onclick="closeSlideShow()">&times;</div>
+                <div class="flex-box modal-prev" onclick="prevSlide()">&#10094;</div>
+                <div class="flex-box modal-next" onclick="nextSlide()">&#10095;</div>
+                <div class="flex-box modal-slide" onclick="nextSlide()">
                     <img src="./img/vineyard2.jpg" />
+                    <div class="modal-text">1 /10: The Vineyard</div>
                 </div>
-            </div>
+            </div-->
 
             <div class="flex-box nav header">  
                 <a class="flex-box nav-icon" id="home" href="#"><img src="./img/house-logo-white.png" /></a>
                 <a class="flex-box nav-link" href="#house">About</a>
                 <a class="flex-box nav-link" href="#farm">Rooms</a>
-                <a class="flex-box nav-link" href="#region">Region</a>
+                <a class="flex-box nav-link" onclick="openSlideShow()">Photos</a>
             </div>
             
             <div class="flex-box nav footer">  
@@ -49,18 +50,18 @@
 
             <div class="flex-box banner">
                 <div class="flex-box banner1">
-                    <div class="bg-img" style="background-image:url('./img/house5.jpg')" data-src="./img/house4.jpg"></div>
+                    <div class="bg-img" style="background-image:url('./img/house4.jpg')"></div>
                 </div>
                 <div class="flex-box banner2">
                     <div class="title flex-box">
                         <div>QUINTA</div><div>~ de ~</div><div>VODRA</div>
                     </div>
-                    <div class="bg-img" data-src="./img/stream5.jpg"></div>
+                    <div class="bg-img"  style="background-image:url('./img/stream5.jpg')"></div>
                 </div>
                 <div class="flex-box banner3">
-                    <div class="bg-img" data-src="./img/veg3.jpg"></div>
-                    <div class="bg-img" data-src="./img/flowers2.jpg"></div>
-                    <div class="bg-img" data-src="./img/grapes2.jpg"></div>
+                    <div class="bg-img" style="background-image:url('./img/veg3.jpg')"></div>
+                    <div class="bg-img" style="background-image:url('./img/flowers2.jpg')"></div>
+                    <div class="bg-img" style="background-image:url('./img/grapes2.jpg')"></div>
                 </div>
             </div>
 

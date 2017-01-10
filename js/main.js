@@ -7,18 +7,13 @@ window.onload = function ()
 function onScroll()
 {
     lazyLoadBackgrounds();
-    //highlightActiveSection();
 }
 
 function lazyLoadImages () 
 {
-    // Images.
-    var offset = pageOffset().y
-    var pageBottom = offset + viewportHeight();
     [].forEach.call(getElements('img[data-src]'), function(img) 
     {
-        var imgTop = offset + bounds(img).top;
-        if(imgTop <= pageBottom)
+        if(offset(img) <= pageBottomOffset())
         {
             img.setAttribute('src', img.getAttribute('data-src'));
             img.onload = function() 
@@ -30,36 +25,13 @@ function lazyLoadImages ()
     });
 }
 
-function highlightActiveSection ()
-{
-    // Images.
-    var offset = pageOffset().y
-    var pageBottom = offset + viewportHeight();
-    [].forEach.call(getElements('div[data-src]'), function(ele) 
-    {
-        var imgTop = offset + bounds(ele).top;
-        if(imgTop <= pageBottom)
-        {
-            ele.style.backgroundImage = 'url(' + ele.getAttribute('data-src') + ')';
-            ele.className += ' loaded';
-            ele.removeAttribute('data-src');
-        }
-    });
-
-}
-
 function lazyLoadBackgrounds () 
 {
-    // Images.
-    var offset = pageOffset().y
-    var pageBottom = offset + viewportHeight();
     [].forEach.call(getElements('div[data-src]'), function(ele) 
     {
-        var imgTop = offset + bounds(ele).top;
-        if(imgTop <= pageBottom)
+        if(offset(ele) <= pageBottomOffset())
         {
             ele.style.backgroundImage = 'url(' + ele.getAttribute('data-src') + ')';
-            ele.className += ' loaded';
             ele.removeAttribute('data-src');
         }
     });
@@ -77,7 +49,7 @@ function getElements (selector)
 
 function addClass (element, className)
 {
-    ele.className += ' loaded';
+    ele.className += ' ' + className;
 }
 
 function removeClass (element, className)
@@ -117,6 +89,16 @@ function pageOffset()
         x : (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0),
         y : (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0)
     };
+}
+
+function pageBottomOffset() 
+{
+    return pageOffset().y + viewportHeight();
+}
+
+function offset(element) 
+{
+    return pageOffset().y + bounds(element).top;
 }
 
 function debounce(func, wait, immediate) 
