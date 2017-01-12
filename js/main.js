@@ -1,6 +1,5 @@
 window.onload = function () 
 { 
-    slideshow = document.querySelector('#slideshow');
     onScroll();
     on(window, 'scroll resize', debounce(onScroll));
 } 
@@ -39,17 +38,19 @@ function lazyLoadBackgrounds ()
 }
 
 // Slideshow
-var slideshow;
 function openSlideShow()
 {
+    var slideshow = document.querySelector('#slideshow');
     addClass(slideshow, 'modal-active');
 }
 function closeSlideShow()
 {
+    var slideshow = document.querySelector('#slideshow');
     removeClass(slideshow, 'modal-active');
 }
 function nextSlide()
 {
+    var slideshow = document.querySelector('#slideshow');
     var activeSlide = slideshow.querySelector('.modal-slide-active');
     var nextSlide = (activeSlide.nextElementSibling != null ? activeSlide.nextElementSibling : activeSlide.parentNode.firstElementChild);
     addClass(nextSlide, 'modal-slide-active');
@@ -57,6 +58,7 @@ function nextSlide()
 }
 function prevSlide()
 {
+    var slideshow = document.querySelector('#slideshow');
     var activeSlide = slideshow.querySelector('.modal-slide-active');
     var prevSlide = (activeSlide.previousElementSibling != null ? activeSlide.previousElementSibling : activeSlide.parentNode.lastElementChild);
     addClass(prevSlide, 'modal-slide-active');
