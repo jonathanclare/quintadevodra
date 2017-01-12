@@ -1,5 +1,6 @@
 window.onload = function () 
 { 
+    slideshow = document.querySelector('#slideshow');
     onScroll();
     on(window, 'scroll resize', debounce(onScroll));
 } 
@@ -11,7 +12,7 @@ function onScroll()
 
 function lazyLoadImages () 
 {
-    [].forEach.call(getElements('img[data-src]'), function(img) 
+    [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) 
     {
         if(offset(img) <= pageBottomOffset())
         {
@@ -27,34 +28,50 @@ function lazyLoadImages ()
 
 function lazyLoadBackgrounds () 
 {
-    [].forEach.call(getElements('div[data-src]'), function(ele) 
+    [].forEach.call(document.querySelectorAll('div[data-src]'), function(div) 
     {
-        if(offset(ele) <= pageBottomOffset())
+        if(offset(div) <= pageBottomOffset())
         {
-            ele.style.backgroundImage = 'url(' + ele.getAttribute('data-src') + ')';
-            ele.removeAttribute('data-src');
+            div.style.backgroundImage = 'url(' + div.getAttribute('data-src') + ')';
+            div.removeAttribute('data-src');
         }
     });
 }
 
-function getElement (selector)
+// Slideshow
+var slideshow;
+function openSlideShow()
 {
-    return document.querySelector(selector);
-};
-
-function getElements (selector)
+    addClass(slideshow, 'modal-active');
+}
+function closeSlideShow()
 {
-    return document.querySelectorAll(selector);
-};
+    removeClass(slideshow, 'modal-active');
+}
+function nextSlide()
+{
+    var activeSlide = slideshow.querySelector('.modal-slide-active');
+    var nextSlide = (activeSlide.nextElementSibling != null ? activeSlide.nextElementSibling : activeSlide.parentNode.firstElementChild);
+    addClass(nextSlide, 'modal-slide-active');
+    removeClass(activeSlide, 'modal-slide-active');
+}
+function prevSlide()
+{
+    var activeSlide = slideshow.querySelector('.modal-slide-active');
+    var prevSlide = (activeSlide.previousElementSibling != null ? activeSlide.previousElementSibling : activeSlide.parentNode.lastElementChild);
+    addClass(prevSlide, 'modal-slide-active');
+    removeClass(activeSlide, 'modal-slide-active');
+}
 
+// Util functions.
 function addClass (element, className)
 {
-    ele.className += ' ' + className;
+    element.className += ' ' + className;
 }
 
 function removeClass (element, className)
 {
-    element.className =  element.className.replace(/(?:^|\s)className(?!\S)/g , '');
+    element.className = element.className.replace(new RegExp('(?:^|\\s)'+ className + '(?:\\s|$)'), ' ');
 }
 
 function hasClass (element, className)

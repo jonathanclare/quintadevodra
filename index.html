@@ -25,29 +25,43 @@
     <body>
         <div class="wrapper">
 
-            <!--div class="modal noselect"> 
-                <div class="flex-box modal-close" onclick="closeSlideShow()">&times;</div>
+            <!-- Photos popup -->
+            <div id="slideshow" class="modal noselect"> 
+                <div>
+                    <div class="flex-box modal-slide modal-slide-active" onclick="nextSlide()">
+                        <img src="./img/vineyard2.jpg" />
+                        <div class="modal-text">1 /10: The Vineyard</div>
+                    </div>
+                    <div class="flex-box modal-slide" onclick="nextSlide()">
+                        <img src="./img/flowers2.jpg" />
+                        <div class="modal-text">2 /10: The Vineyard</div>
+                    </div>
+                    <div class="flex-box modal-slide" onclick="nextSlide()">
+                        <img src="./img/stream5.jpg" />
+                        <div class="modal-text">2 /10: The Vineyard</div>
+                    </div>
+                </div>
                 <div class="flex-box modal-prev" onclick="prevSlide()">&#10094;</div>
                 <div class="flex-box modal-next" onclick="nextSlide()">&#10095;</div>
-                <div class="flex-box modal-slide" onclick="nextSlide()">
-                    <img src="./img/vineyard2.jpg" />
-                    <div class="modal-text">1 /10: The Vineyard</div>
-                </div>
-            </div-->
+                <div class="flex-box modal-close" onclick="closeSlideShow()">&times;</div>
+            </div>
 
+            <!-- Navigation bar at top of page -->
             <div class="flex-box nav header">  
                 <a class="flex-box nav-icon" id="home" href="#"><img src="./img/house-logo-white.png" /></a>
-                <a class="flex-box nav-link" href="#house">About</a>
-                <a class="flex-box nav-link" href="#farm">Rooms</a>
-                <a class="flex-box nav-link" onclick="openSlideShow()">Photos</a>
+                <a class="flex-box nav-link" href="#about">About</a>
+                <a class="flex-box nav-link" href="#rooms">Rooms</a>
+                <a class="flex-box nav-link" href="javascript:void(0)" onclick="openSlideShow()">Photos</a>
             </div>
             
+            <!-- Navigation bar at foot of page -->
             <div class="flex-box nav footer">  
-                <a class="flex-box nav-link" href="#contact" onclick="return false;">Booking & Enquiries</a>
+                <a class="flex-box nav-link" href="#booking" onclick="return false;">Booking & Enquiries</a>
                 <a class="flex-box nav-icon" id="airbnb" href="#"><img src="./img/airbnb.png" /></a>
                 <a class="flex-box nav-icon" id="facebook" href="#"><img src="./img/facebook.png" /></a>
             </div>
 
+            <!-- Main banner when page is opened -->
             <div class="flex-box banner">
                 <div class="flex-box banner1">
                     <div class="bg-img" style="background-image:url('./img/house4.jpg')"></div>
@@ -65,44 +79,47 @@
                 </div>
             </div>
 
-            <div id="house">
+            <!-- About section -->
+            <div id="about">
                 <div class="section">
-                    <div class="section-header">The House</div>
+                    <div class="section-header">About</div>
                     <div class="flex-box section-banner">
                         <div class="bg-img" data-src="./img/farm1.jpg"></div>
                         <div class="bg-img" data-src="./img/house3.jpg"></div>
                         <div class="bg-img" data-src="./img/farm2.jpg"></div>
                     </div>
                     <div class="section-content">
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum quis dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                        <p>The mountain range, situated between the municipalities of Seia, Manteigas, Gouveia, Guarda and Covilhã, is about 100 kilometres (60 miles) long and is 30 km (19 mi) across at its widest point. It is formed from a huge granite ridge that once formed the southern frontier of the country. Due to its bizarrely shaped crags and gorges, mountain streams and lakes, beautiful forests and magnificent views, the area ranks among Portugal’s outstanding scenic attractions.</p>
                     </div>
                 </div>
             </div>
 
-            <div id="farm">
+            <!-- Rooms section -->
+            <div id="rooms">
                 <div class="section">
-                    <div class="section-header">The Farm</div>
+                    <div class="section-header">Rooms</div>
                     <div class="flex-box section-banner">
                         <div class="bg-img" data-src="./img/veg1.jpg"></div>
                         <div class="bg-img" data-src="./img/vineyard2.jpg"></div>
                         <div class="bg-img" data-src="./img/grapes1.jpg"></div>
                     </div>
                     <div class="section-content">
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum quis dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                        <p>The mountain range, situated between the municipalities of Seia, Manteigas, Gouveia, Guarda and Covilhã, is about 100 kilometres (60 miles) long and is 30 km (19 mi) across at its widest point. It is formed from a huge granite ridge that once formed the southern frontier of the country. Due to its bizarrely shaped crags and gorges, mountain streams and lakes, beautiful forests and magnificent views, the area ranks among Portugal’s outstanding scenic attractions.</p>
                     </div>
                 </div>
             </div>
             
-            <div id="region">
+            <!-- Booking section -->
+            <div id="booking">
                 <div class="section">
-                    <div class="section-header">The Region</div>
+                    <div class="section-header">Booking & Enquiries</div>
                     <div class="flex-box section-banner">
                         <div class="bg-img" data-src="./img/mountains1.jpg"></div>
                         <div class="bg-img" data-src="./img/mountains3.jpg"></div>
                         <div class="bg-img" data-src="./img/vineyard2.jpg"></div>
                     </div>
                     <div class="section-content">
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p> <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum quis dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                        <p>The mountain range, situated between the municipalities of Seia, Manteigas, Gouveia, Guarda and Covilhã, is about 100 kilometres (60 miles) long and is 30 km (19 mi) across at its widest point. It is formed from a huge granite ridge that once formed the southern frontier of the country. Due to its bizarrely shaped crags and gorges, mountain streams and lakes, beautiful forests and magnificent views, the area ranks among Portugal’s outstanding scenic attractions.</p>
                     </div>
                 </div>
             </div>

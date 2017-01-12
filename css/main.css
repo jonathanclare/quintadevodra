@@ -51,9 +51,7 @@ body
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    transition-property: opacity; 
-    transition-duration: 0.5s; 
-    transition-timing-function: ease-in;
+    transition: opacity 0.5s; 
 }
 
 /* Navbars */
@@ -73,7 +71,6 @@ body
 }
 .nav-link, .nav-icon
 {
-    cursor:pointer;
     justify-content: center;
     align-items:center;
 }
@@ -82,7 +79,7 @@ body
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
     flex:1;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 .nav-link:hover
 {
@@ -100,7 +97,7 @@ body
     opacity: 0.7;
     max-height: 100%;
     max-width: 100%;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 .nav-icon:hover img 
 {
@@ -171,35 +168,12 @@ body
 }
 
 /* Slideshow modal */
-.modal-btn 
-{
-    position: absolute;
-    bottom: 2vw;
-    right: 2vw;
-
-    border-radius: 4px;
-    border: 1px solid;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    cursor: pointer;
-
-    border-color: #c4c4c4;
-    background: white;
-    color: #484848;
-
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    padding: 7px 21px;
-    font-size: 13px;
-}
-.modal-btn:hover, .modal-btn:focus 
-{
-    border-color: #aaa;
-    color: #484848;
-}
 .modal 
 {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events:none;
+    transition: visibility 0s, opacity 0.5s;
     z-index: 2000;
     position: fixed;
     top: 0; 
@@ -208,15 +182,16 @@ body
     bottom: 0; 
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.9);
-
-    font-family: 'Open Sans', sans-serif;
-    font-size:16px;
-    color:#fff;
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+.modal-active
+{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
 }
 .modal-slide 
 {
-    z-index: 2001;
+    visibility: hidden;
     position: absolute;
     top: 0;
     left: 0; 
@@ -224,7 +199,10 @@ body
     bottom: 0; 
     align-items:center;
     justify-content: center;
-    cursor: pointer;
+}
+.modal-slide-active
+{
+    visibility: visible;
 }
 .modal-slide img 
 {
@@ -236,6 +214,10 @@ body
     position: absolute;
     bottom: 0;
     align-items:center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    color:#fff;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     font-size:16px;
     padding:2vh;
 }
@@ -245,14 +227,22 @@ body
     top: 0;
     align-items:center;
     justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    color:#fff;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    opacity:0.5;
+    transition: opacity 0.3s; 
     cursor: pointer;
     padding:2vh;
     width: 10vh;
 }
+.modal-close:hover, .modal-prev:hover, .modal-next:hover 
+{
+    opacity:1;
+}
 .modal-prev, .modal-next
 {
     font-size:5vh;
-    z-index: 2002;
     bottom:0;
 } 
 .modal-prev
@@ -266,7 +256,6 @@ body
 .modal-close 
 {
     font-size:8vh;
-    z-index: 2003;
     right: 0;
     height: 10vh;
 }
@@ -280,7 +269,7 @@ body
 }
 .section-banner
 {
-    height:35vw;
+    height:35vh;
 }
 .section-banner > div 
 {
@@ -298,20 +287,21 @@ body
 {   
     -webkit-font-smoothing: antialiased;
     font-family: 'Merriweather', serif;
-    font-size:12px;
+    font-size:16px;
+    line-height:26px;
     margin: 0 auto;
     max-width:760px;
     padding:20px;  
 }
-#house
+#about
 {
 
 }
-#farm
+#rooms
 {
 
 }
-#region
+#booking
 {
 
 }
