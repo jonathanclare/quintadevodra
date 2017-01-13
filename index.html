@@ -11,13 +11,12 @@
         <meta name="description" content="Quinta de Vodra">
         <meta name="keywords" content="Quinta de Vodra">
 
-        <!-- facebook image when linked to site -->
+        <!-- Facebook image when linked to site -->
         <meta property="og:image" content="./img/house2.jpg">
 
-        <!-- webfonts -->
+        <!-- Import webfonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:Light" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:Light" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="./css/main.css"  />
         <script src="./js/main.js"></script>
@@ -25,8 +24,41 @@
     <body>
         <div class="wrapper">
 
+            <!-- Header -->
+            <div class="flex-box nav header">  
+                <a class="flex-box nav-icon" id="home" href="#"><img src="./img/house-logo-white.png" /></a>
+                <a class="flex-box nav-link" href="#about">About</a>
+                <a class="flex-box nav-link" href="#rooms">Rooms</a>
+                <a class="flex-box nav-link" href="javascript:void(0)" onclick="openSlideShow()">Photos</a>
+            </div>
+
+            <!-- Banner-->
+            <div class="flex-box banner">
+                <div class="flex-box banner1">
+                    <div class="bg-img" style="background-image:url('./img/house4.jpg')"></div>
+                </div>
+                <div class="flex-box banner2">
+                    <div class="title flex-box no-select">
+                        <div>QUINTA</div><div>~ de ~</div><div>VODRA</div>
+                    </div>
+                    <div class="bg-img"  style="background-image:url('./img/stream5.jpg')"></div>
+                </div>
+                <div class="flex-box banner3">
+                    <div class="bg-img" style="background-image:url('./img/veg3.jpg')"></div>
+                    <div class="bg-img" style="background-image:url('./img/house6.jpg')"></div>
+                    <div class="bg-img" style="background-image:url('./img/grapes2.jpg')"></div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="flex-box nav footer">  
+                <a class="flex-box nav-link" href="#booking" onclick="return false;">Booking & Enquiries</a>
+                <a class="flex-box nav-icon" id="airbnb" href="#"><img src="./img/airbnb.png" /></a>
+                <a class="flex-box nav-icon" id="facebook" href="#"><img src="./img/facebook.png" /></a>
+            </div>
+
             <!-- Photos popup -->
-            <div id="slideshow" class="modal noselect"> 
+            <div id="slideshow" class="modal no-select"> 
                 <div>
                     <div class="flex-box modal-slide modal-slide-active" onclick="nextSlide()">
                         <img src="./img/vineyard2.jpg" />
@@ -44,39 +76,6 @@
                 <div class="flex-box modal-prev" onclick="prevSlide()">&#10094;</div>
                 <div class="flex-box modal-next" onclick="nextSlide()">&#10095;</div>
                 <div class="flex-box modal-close" onclick="closeSlideShow()">&times;</div>
-            </div>
-
-            <!-- Navigation bar at top of page -->
-            <div class="flex-box nav header">  
-                <a class="flex-box nav-icon" id="home" href="#"><img src="./img/house-logo-white.png" /></a>
-                <a class="flex-box nav-link" href="#about">About</a>
-                <a class="flex-box nav-link" href="#rooms">Rooms</a>
-                <a class="flex-box nav-link" href="javascript:void(0)" onclick="openSlideShow()">Photos</a>
-            </div>
-            
-            <!-- Navigation bar at foot of page -->
-            <div class="flex-box nav footer">  
-                <a class="flex-box nav-link" href="#booking" onclick="return false;">Booking & Enquiries</a>
-                <a class="flex-box nav-icon" id="airbnb" href="#"><img src="./img/airbnb.png" /></a>
-                <a class="flex-box nav-icon" id="facebook" href="#"><img src="./img/facebook.png" /></a>
-            </div>
-
-            <!-- Main banner when page is opened -->
-            <div class="flex-box banner">
-                <div class="flex-box banner1">
-                    <div class="bg-img" style="background-image:url('./img/house4.jpg')"></div>
-                </div>
-                <div class="flex-box banner2">
-                    <div class="title flex-box">
-                        <div>QUINTA</div><div>~ de ~</div><div>VODRA</div>
-                    </div>
-                    <div class="bg-img"  style="background-image:url('./img/stream5.jpg')"></div>
-                </div>
-                <div class="flex-box banner3">
-                    <div class="bg-img" style="background-image:url('./img/veg3.jpg')"></div>
-                    <div class="bg-img" style="background-image:url('./img/flowers2.jpg')"></div>
-                    <div class="bg-img" style="background-image:url('./img/grapes2.jpg')"></div>
-                </div>
             </div>
 
             <!-- About section -->
