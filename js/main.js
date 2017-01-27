@@ -9,6 +9,7 @@ function onScroll()
     lazyLoadBackgrounds();
 }
 
+// Lazy Load.
 function lazyLoadImages () 
 {
     [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) 
