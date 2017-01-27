@@ -92,14 +92,15 @@ body
 {
     flex:0 0 8vh;
     padding:2vh;
+    min-width:2rem;
 }
 .nav-icon img
 {
     opacity: 0.7;
     max-height: 100%;
     max-width: 100%;
-    min-height:1rem;
-    min-width:1rem;
+    /*min-width:1rem;
+    min-height:1rem;*/
 }
 .nav-icon:hover img 
 {
