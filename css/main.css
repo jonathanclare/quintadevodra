@@ -217,6 +217,8 @@ body
 /* Sections */
 .section
 {
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
     margin: 0 auto;
     max-width:1000px;
     padding: 8vh 0; 
@@ -229,16 +231,20 @@ body
     color:#444;
     text-align:center;
 }
-.section-banner
+.section-body
 {
-    height:33vw;
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
 }
-.section-banner > div 
+.section-images > div 
 {
     flex:1;
+    height:33vh;
 }
-.section-content
+.section-text
 {   
+    justify-content:center;
+    align-items:center;
     padding:1rem;  
     line-height:1.8rem;
     margin: 0 auto;
@@ -251,9 +257,32 @@ body
         font-size:10vh;
         text-align:left;
     }
-    .section-banner
+    .section-body
     {
-        height:33vh;
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    }
+    .section-text 
+    {
+        flex:1;
+        order:1;
+    }
+    .section-images
+    {
+        flex:1;
+        order:2;
+        padding:1rem;  
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+    .section-images > div
+    {
+        height:auto;
+        flex: 1 0 50%;
+    }
+    .section-images > div:nth-child(1) 
+    {
+        flex: 0 1 100%;
     }
 }
 #about
