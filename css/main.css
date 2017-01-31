@@ -48,7 +48,7 @@ body
 /* Centered background images */
 .bg-img
 {
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
