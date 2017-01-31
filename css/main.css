@@ -242,7 +242,6 @@ body
 }
 .section-images > div 
 {
-    min-height:100px;
     border:solid #fff 0.3rem;
     flex:1;
     height:30vh;
