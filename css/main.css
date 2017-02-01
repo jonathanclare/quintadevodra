@@ -249,6 +249,7 @@ body
 }
 .section-images .bg-img 
 {
+    background-color: #f7f7f7;
     margin:5px;
     flex:1;
 }
