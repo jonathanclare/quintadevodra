@@ -242,13 +242,14 @@ body
 }
 .section-images 
 {
+    margin:5px;
     flex:1;
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
 }
 .section-images .bg-img 
 {
-    margin:10px;
+    margin:5px;
     flex:1;
 }
 .section-info
