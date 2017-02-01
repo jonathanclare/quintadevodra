@@ -214,6 +214,10 @@ body
 }
 
 /* Sections */
+.content > div:nth-child(even)
+{
+    background-color: #f9f9f9;
+}
 .section
 {
     -webkit-flex-flow: column nowrap;
@@ -224,6 +228,7 @@ body
 }
 .section-content
 {
+    flex:1;
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
 }
@@ -231,56 +236,37 @@ body
 {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size:10vw;
-    padding:1rem; 
+    margin:1rem; 
     color:#444;
     text-align:center;
 }
-.section-body
-{
-    -webkit-flex-flow: column nowrap;
-    flex-flow: column nowrap;
-}
 .section-images 
 {
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    padding:0.7rem; 
-}
-.section-images > div 
-{
-    border:solid #fff 0.3rem;
     flex:1;
-    height:30vh;
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    margin:0.7rem; 
 }
-.section-text
+.section-images .bg-img 
+{
+    margin:0.3rem;
+    flex:1;
+}
+.section-info
 {   
+    flex:1;
     justify-content:center;
     align-items:center;
-    padding:1rem;  
+    margin:1rem;  
     line-height:1.8rem;
     max-width:760px;
 }
-
-
-
-    .section-images > div
-    {
-        flex: 1 0 50%;
-        height:20vh;
-    }
-    .section-images > div:first-child
-    {
-        flex: 0 1 100%;
-        height:30vh;
-    }
-    .section-images > div:nth-child(4) 
-    {
-        flex: 0 1 100%;
-        height:30vh;
-    }
-
 @media (orientation:landscape)
 {
+    .content > div:nth-child(even) .section-content
+    {
+        order: 2;
+    }
     .section
     {
         -webkit-flex-flow: row nowrap;
@@ -289,54 +275,29 @@ body
     .section-header
     {
         font-size:10vh;
-        text-align:left;
-    }
-    .section-body
-    {
-        -webkit-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-    }
-    .section-content 
-    {
-        flex:1;
-    }
-    .section-text 
-    {
-        flex:1;
-    }
-    .section-images
-    {
-        flex:1;
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-    }
-    .section-images > div
-    {
-        flex: 1 0 50%;
-        height:20vh;
-    }
-    .section-images > div:first-child
-    {
-        flex: 0 1 100%;
-        height:30vh;
-    }
-    .section-images > div:nth-child(4) 
-    {
-        flex: 0 1 100%;
-        height:30vh;
     }
 }
-#about
-{
 
-}
-#rooms
+/* images */
+.img-xl
 {
-    background-color: #f9f9f9;
+    height:50vh;
 }
-#booking
+.img-l
 {
-
+    height:40vh;
+}
+.img-m
+{
+    height:30vh;
+}
+.img-s
+{
+    height:20vh;
+}
+.img-xs
+{
+    height:10vh;
 }
 
 /* Slideshow modal */
