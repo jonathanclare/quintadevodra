@@ -235,8 +235,8 @@ body
 .section-header
 {
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size:10vw;
-    margin:1rem; 
+    font-size:12vw;
+    margin:10px;
     color:#444;
     text-align:center;
 }
@@ -245,11 +245,10 @@ body
     flex:1;
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
-    margin:0.7rem; 
 }
 .section-images .bg-img 
 {
-    margin:0.3rem;
+    margin:10px;
     flex:1;
 }
 .section-info
@@ -257,7 +256,7 @@ body
     flex:1;
     justify-content:center;
     align-items:center;
-    margin:1rem;  
+    margin:10px;
     line-height:1.8rem;
     max-width:760px;
 }
@@ -274,30 +273,25 @@ body
     }
     .section-header
     {
-        font-size:10vh;
+        font-size:9vh;
     }
 }
 
 /* images */
-.img-xl
-{
-    height:50vh;
-}
 .img-l
 {
-    height:40vh;
+    padding-bottom:75%;
+    /*height:300px;*/
 }
 .img-m
 {
-    height:30vh;
+    padding-bottom:50%;
+    /*height:220px;*/
 }
 .img-s
 {
-    height:20vh;
-}
-.img-xs
-{
-    height:10vh;
+    padding-bottom:25%;
+    /*height:150px;*/
 }
 
 /* Slideshow modal */
