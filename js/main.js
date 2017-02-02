@@ -102,7 +102,7 @@ function viewportHeight()
     return document.documentElement.clientHeight;
 }
 
-function pageOffset() 
+function pageTopOffset() 
 {
     var doc = document.documentElement;
     return {
@@ -113,12 +113,12 @@ function pageOffset()
 
 function pageBottomOffset() 
 {
-    return pageOffset().y + viewportHeight();
+    return pageTopOffset().y + viewportHeight();
 }
 
 function offset(element) 
 {
-    return pageOffset().y + bounds(element).top;
+    return pageTopOffset().y + bounds(element).top;
 }
 
 function debounce(func, wait, immediate) 

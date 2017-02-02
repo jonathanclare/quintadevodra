@@ -51,6 +51,7 @@ body
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    background-color:  rgba(150,150,150,0.1);
 }
 
 /* Navbars */
@@ -249,7 +250,6 @@ body
 }
 .section-images .bg-img 
 {
-    background-color: #f7f7f7;
     margin:5px;
     flex:1;
 }
