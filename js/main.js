@@ -28,9 +28,11 @@ function lazyLoadImages ()
 
 function lazyLoadBackgrounds () 
 {
+    var buffer = viewportHeight(); // The height above the image at which it starts to load - so images start to load just before scrolled into view.
+
     [].forEach.call(document.querySelectorAll('div[data-src]'), function(div) 
     {
-        if(offset(div) <= pageBottomOffset())
+        if((offset(div) - buffer) <= pageBottomOffset())
         {
             div.style.backgroundImage = 'url(' + div.getAttribute('data-src') + ')';
             div.removeAttribute('data-src');

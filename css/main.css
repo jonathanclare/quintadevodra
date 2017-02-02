@@ -57,7 +57,6 @@ body
 /* Navbars */
 .nav 
 {
-    min-height:2rem;
     height: 8vh;
     background-color: #e03328;
     position: fixed;
@@ -114,13 +113,6 @@ body
 {
     bottom: 0;
 }
-@media (orientation:landscape)
-{
-    .nav-link
-    {
-        flex:0;
-    }
-}
 
 /* Icon Links */
 #facebook
@@ -138,7 +130,6 @@ body
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
     height:84vh;
-    min-height:400px;
 }
 .banner1
 {
@@ -148,27 +139,6 @@ body
 {
     flex:1;
 }
-@media (orientation:landscape)
-{
-    .banner
-    {
-        -webkit-flex-flow: row-reverse nowrap;
-        flex-flow: row-reverse nowrap;
-    }
-    .banner1, .banner2, .banner3
-    {
-        -webkit-flex-flow: column nowrap;
-        flex-flow: column nowrap;
-    }
-    .banner2  > div:nth-child(1) 
-    {
-        flex:2;
-    }
-    .banner2  > div:nth-child(2) 
-    {
-        flex:1;
-    }
-}
 
 /* Banner Title */
 .title
@@ -177,45 +147,26 @@ body
     justify-content:space-around;
     align-items:center;
 }
+.title > div
+{
+    font-size:11vw;
+}
 .title > div:nth-child(1) 
 {
-    font-size:12vw;
     color:#0083bb;
 }
 .title > div:nth-child(2) 
 {
-    font-size:10vw;
     font-style: italic;
     color:#fcbc3b;
 }
 .title > div:nth-child(3) 
 {
-    font-size:12vw;
     color: #e03328;
-}
-@media (orientation:landscape)
-{
-    .title
-    {
-        -webkit-flex-flow: column nowrap;
-        flex-flow: column nowrap;
-    }
-    .title > div:nth-child(1) 
-    {
-        font-size:9vh;
-    }
-    .title > div:nth-child(2) 
-    {
-        font-size:7vh;
-    }
-    .title > div:nth-child(3) 
-    {
-        font-size:9vh;
-    }
 }
 
 /* Sections */
-.content > div:nth-child(even)
+.content > div:nth-child(odd)
 {
     background-color: #f9f9f9;
 }
@@ -256,27 +207,12 @@ body
 .section-info
 {   
     flex:1;
+    text-align: justify;
     justify-content:center;
     align-items:center;
     margin:10px;
     line-height:1.8rem;
     max-width:760px;
-}
-@media (orientation:landscape)
-{
-    .content > div:nth-child(even) .section-content
-    {
-        order: 2;
-    }
-    .section
-    {
-        -webkit-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-    }
-    .section-header
-    {
-        font-size:9vh;
-    }
 }
 
 /* images */
@@ -385,19 +321,136 @@ body
     right: 0;
 }
 
-/* Responsive Design */
-@media (orientation:landscape) /* Landscape */
-{
+/* Responsive Design - Default css styles are portrait first */
 
-}
-@media (orientation:portrait) /* Portrait */
+/* Landscape */
+@media (orientation:landscape)
 {
-    
-}
-@media all and (max-width: 768px) /* Laptop - 1024px */
-{
+    /* Navbar */
+    .nav-link
+    {
+        flex:0;
+    }
 
+    /* Banner */
+    .banner
+    {
+        -webkit-flex-flow: row-reverse nowrap;
+        flex-flow: row-reverse nowrap;
+    }
+    .banner1, .banner2, .banner3
+    {
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+    }
+    .banner2  > div:nth-child(1) 
+    {
+        flex:2;
+    }
+    .banner2  > div:nth-child(2) 
+    {
+        flex:1;
+    }
+
+    /* Banner Title */
+    .title
+    {
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+    }
+    .title > div 
+    {
+        font-size:9vh;
+    }
+
+    /* Section */
+    .content > div:nth-child(even) .section-content
+    {
+        order: 2;
+    }
+    .section
+    {
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    }
+    .section-header
+    {
+        font-size:9vh;
+    }
 }
+
+/* Cope with very small screens */
+
+/* Height < 400px - the calculation to get the browser height below which the navbar is less than 2rem is (100vh / 8vh) * 32px(2rem) = 400px */
+@media (max-height: 400px)
+{
+    .nav 
+    {
+        height:2rem;
+    }
+    .banner 
+    {
+        height:calc(100vh - 4rem);
+    }
+}
+/* Landscape and height < 320px */
+@media (orientation:landscape) and (max-height: 319px)
+{
+    /* Banner */
+    .banner
+    {
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    }
+
+    /* Banner Title */
+    .title > div 
+    {
+        font-size:calc((100vh - 4rem) / 5);
+    }
+}
+/* Portrait and width < 320px */
+@media (orientation:portrait) and (max-width: 319px)
+{
+    /* Banner */
+    .banner
+    {
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+    }
+
+    /* Banner Title */
+    .title
+    {
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+    }
+
+    /* Banner Title */
+    .title > div 
+    {
+        font-size:calc(((100vh - 4rem) / 2) / 5);
+    }
+}
+/* Landscape and height < 320px or Portrait and width < 320px */
+@media (orientation:landscape) and (max-height: 319px), (orientation:portrait) and (max-width: 319px)
+{
+    /* Banner */
+    .banner1, .banner2
+    {
+        flex:1;
+    }
+    .banner2  > div:nth-child(2) 
+    {
+        flex:0;
+    }
+    .banner3
+    {
+        flex:0;
+    }
+}
+
+/* Widths used in chrome dev tools */
 @media all and (max-width: 320px) /* Mobile S - 320px */
 {
 
