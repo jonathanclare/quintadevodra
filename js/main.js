@@ -7,7 +7,6 @@ window.onload = function ()
 function onScroll()
 {
     lazyLoadBackgrounds();
-    lazyLoadCalendar();
 }
 
 // Lazy Load.
@@ -37,20 +36,6 @@ function lazyLoadBackgrounds ()
         {
             div.style.backgroundImage = 'url(' + div.getAttribute('data-src') + ')';
             div.removeAttribute('data-src');
-        }
-    });
-}
-
-function lazyLoadCalendar () 
-{
-    var buffer = viewportHeight(); // The height above the image at which it starts to load - so images start to load just before scrolled into view.
-
-    [].forEach.call(document.querySelectorAll('iframe[data-src]'), function(iframe) 
-    {
-        if((offset(iframe) - buffer) <= pageBottomOffset())
-        {
-            iframe.src = iframe.getAttribute('data-src');
-            iframe.removeAttribute('data-src');
         }
     });
 }
