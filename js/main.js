@@ -10,18 +10,14 @@ function onScroll()
 }
 
 // Lazy Load.
-function lazyLoadImages () 
+function lazyLoadSlides () 
 {
     [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) 
     {
-        if(offset(img) <= pageBottomOffset())
+        img.setAttribute('src', img.getAttribute('data-src'));
+        img.onload = function() 
         {
-            img.setAttribute('src', img.getAttribute('data-src'));
-            img.onload = function() 
-            {
-                img.removeAttribute('data-src');
-                img.className += 'loaded';
-            }
+            img.removeAttribute('data-src');
         }
     });
 }
@@ -34,15 +30,48 @@ function lazyLoadBackgrounds ()
     {
         if((offset(div) - buffer) <= pageBottomOffset())
         {
-            div.style.backgroundImage = 'url(' + div.getAttribute('data-src') + ')';
+            var src = div.getAttribute('data-src');
+            div.style.backgroundImage = 'url(' + src + ')';
             div.removeAttribute('data-src');
+            addClass(div, 'bg-img-active');
+
+            // Add click to open slideshow.
+            (function (_src) {
+                on(div, 'click', function(e)
+                {
+                    openSlide(_src);
+                });
+            })(src);
         }
     });
 }
+/*
+function addClicktoImages () 
+{
+    [].forEach.call(document.querySelectorAll('div[data-src]'), function(div) 
+    {
+        (function (_div) {
+            on(_div, 'click', function(e)
+            {
+                openSlide(_div.getAttribute('data-src'));
+            });
+        })(div);
+    });
+}*/
 
-// Slideshow
+// Slideshow.
+function openSlide(src)
+{
+    var slideshow = document.querySelector('#slideshow');
+    var activeSlide = slideshow.querySelector('.modal-slide-active');
+    var nextSlide = slideshow.querySelector('img[src="'+src+'"], img[data-src="'+src+'"]').parentElement;
+    addClass(nextSlide, 'modal-slide-active');
+    removeClass(activeSlide, 'modal-slide-active');
+    openSlideShow();
+}
 function openSlideShow()
 {
+    lazyLoadSlides();
     var slideshow = document.querySelector('#slideshow');
     addClass(slideshow, 'modal-active');
 }
@@ -53,6 +82,8 @@ function closeSlideShow()
 }
 function nextSlide()
 {
+                    console.log("nextSlide");
+
     var slideshow = document.querySelector('#slideshow');
     var activeSlide = slideshow.querySelector('.modal-slide-active');
     var nextSlide = (activeSlide.nextElementSibling != null ? activeSlide.nextElementSibling : activeSlide.parentNode.firstElementChild);
