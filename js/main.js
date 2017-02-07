@@ -12,7 +12,7 @@ function onScroll()
 // Lazy Load.
 function lazyLoadSlides () 
 {
-    [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) 
+    [].forEach.call(document.querySelectorAll('.modal img[data-src]'), function(img) 
     {
         img.setAttribute('src', img.getAttribute('data-src'));
         img.onload = function() 
@@ -26,64 +26,68 @@ function lazyLoadBackgrounds ()
 {
     var buffer = viewportHeight(); // The height above the image at which it starts to load - so images start to load just before scrolled into view.
 
-    [].forEach.call(document.querySelectorAll('div[data-src]'), function(div) 
+    [].forEach.call(document.querySelectorAll('.img-lazy-load[data-src]'), function(elt) 
     {
-        if((offset(div) - buffer) <= pageBottomOffset())
+        if((offset(elt) - buffer) <= pageBottomOffset())
         {
-            var src = div.getAttribute('data-src');
-            div.style.backgroundImage = 'url(' + src + ')';
-            div.removeAttribute('data-src');
-            addClass(div, 'bg-img-active');
+            var src = elt.getAttribute('data-src');
+            if (elt.nodeName == 'IMG')
+            {
+                elt.setAttribute('src', src);
+                elt.onload = function() 
+                {
+                    elt.removeAttribute('data-src');
+                    addClass(elt, 'img-lazy-load-complete');
+                }
+            }
+            else
+            {
+                var img = document.createElement('img'); 
+                img.setAttribute('src', src);
+                img.onload = function() 
+                {
+                    elt.style.backgroundImage = 'url(' + src + ')';
+                    elt.removeAttribute('data-src');
+                    addClass(elt, 'img-lazy-load-complete');
+                }
+            }
 
             // Add click to open slideshow.
             (function (_src) {
-                on(div, 'click', function(e)
+                on(elt, 'click', function(e)
                 {
-                    openSlide(_src);
+                    openSlideShow(_src);
                 });
             })(src);
         }
     });
 }
-/*
-function addClicktoImages () 
-{
-    [].forEach.call(document.querySelectorAll('div[data-src]'), function(div) 
-    {
-        (function (_div) {
-            on(_div, 'click', function(e)
-            {
-                openSlide(_div.getAttribute('data-src'));
-            });
-        })(div);
-    });
-}*/
 
 // Slideshow.
-function openSlide(src)
+function openSlideShow(src)
 {
-    var slideshow = document.querySelector('#slideshow');
-    var activeSlide = slideshow.querySelector('.modal-slide-active');
-    var nextSlide = slideshow.querySelector('img[src="'+src+'"], img[data-src="'+src+'"]').parentElement;
-    addClass(nextSlide, 'modal-slide-active');
-    removeClass(activeSlide, 'modal-slide-active');
-    openSlideShow();
-}
-function openSlideShow()
-{
+    addClass(document.body, 'hide-scrollbars');
     lazyLoadSlides();
     var slideshow = document.querySelector('#slideshow');
+
+    if (src !== undefined)
+    {
+        var activeSlide = slideshow.querySelector('.modal-slide-active');
+        var nextSlide = slideshow.querySelector('img[src="'+src+'"], img[data-src="'+src+'"]').parentElement.parentElement;
+        addClass(nextSlide, 'modal-slide-active');
+        removeClass(activeSlide, 'modal-slide-active');
+    }
+
     addClass(slideshow, 'modal-active');
 }
 function closeSlideShow()
 {
+    removeClass(document.body, 'hide-scrollbars');
     var slideshow = document.querySelector('#slideshow');
     removeClass(slideshow, 'modal-active');
 }
 function nextSlide()
 {
-                    console.log("nextSlide");
-
     var slideshow = document.querySelector('#slideshow');
     var activeSlide = slideshow.querySelector('.modal-slide-active');
     var nextSlide = (activeSlide.nextElementSibling != null ? activeSlide.nextElementSibling : activeSlide.parentNode.firstElementChild);
