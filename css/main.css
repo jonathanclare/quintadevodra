@@ -28,7 +28,6 @@ body
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
 }
 
@@ -143,7 +142,6 @@ body
 .banner
 {
     margin-top:3rem;
-    -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
     height:calc(100vh - 6rem);
 }
@@ -188,7 +186,6 @@ body
 }
 .section
 {
-    -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
     margin: 0 auto;
     max-width:1000px;
@@ -196,7 +193,6 @@ body
 }
 .section-content
 {
-    -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
 }
 .section-header
@@ -209,7 +205,6 @@ body
 .section-images 
 {
     margin:5px;
-    -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
 }
 .section-images .bg-img 
@@ -219,7 +214,6 @@ body
 }
 .section-info
 {   
-    -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
     justify-content:center;
     margin:10px;
@@ -228,7 +222,6 @@ body
 }
 .section-footer-content
 {
-    -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     justify-content: space-around;
 }
@@ -353,12 +346,10 @@ body
     /* Banner */
     .banner
     {
-        -webkit-flex-flow: row-reverse nowrap;
         flex-flow: row-reverse nowrap;
     }
     .banner1, .banner2, .banner3
     {
-        -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
     }
     .banner2  > div:nth-child(1) 
@@ -373,7 +364,6 @@ body
     /* Banner Title */
     .title
     {
-        -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
     }
     .title > div 
@@ -388,7 +378,6 @@ body
     }
     .section
     {
-        -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
     }
     .section-header
@@ -405,7 +394,6 @@ body
     }
     .section-footer
     {
-        -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
     }
 }
@@ -418,7 +406,6 @@ body
     /* Banner */
     .banner
     {
-        -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
     }
 
@@ -434,14 +421,12 @@ body
     /* Banner */
     .banner
     {
-        -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
     }
 
     /* Banner Title */
     .title
     {
-        -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
     }
 

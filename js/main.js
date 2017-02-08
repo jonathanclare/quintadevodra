@@ -1,3 +1,8 @@
+if (!Modernizr.flexbox) {
+    window.location = './basic.html';
+} 
+
+
 window.onload = function () 
 { 
     onScroll();
@@ -6,10 +11,10 @@ window.onload = function ()
 
 function onScroll()
 {
-    lazyLoadBackgrounds();
+    lazyLoadImages();
 }
 
-// Lazy Load.
+// Lazy Load slides.
 function lazyLoadSlides () 
 {
     [].forEach.call(document.querySelectorAll('.modal img[data-src]'), function(img) 
@@ -22,7 +27,8 @@ function lazyLoadSlides ()
     });
 }
 
-function lazyLoadBackgrounds () 
+// Lazy Load slides images.
+function lazyLoadImages () 
 {
     var buffer = viewportHeight(); // The height above the image at which it starts to load - so images start to load just before scrolled into view.
 
