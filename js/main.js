@@ -2,7 +2,7 @@ if (!Modernizr.flexbox) {
     window.location = './basic.html';
 } 
 
-
+/*
 window.onload = function () 
 { 
     onScroll();
@@ -68,12 +68,12 @@ function lazyLoadImages ()
         }
     });
 }
+*/
 
 // Slideshow.
 function openSlideShow(src)
 {
     addClass(document.body, 'hide-scrollbars');
-    lazyLoadSlides();
     var slideshow = document.querySelector('#slideshow');
 
     if (src !== undefined)

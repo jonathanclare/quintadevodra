@@ -51,7 +51,7 @@ body
 }
 
 /* images */
-.img-lazy-load
+/*.img-lazy-load
 {
     background-color:  #ccc;
     opacity:0.1;
@@ -61,7 +61,7 @@ body
 {
     cursor:pointer;
     opacity:1;
-}
+}*/
 .img-l
 {
     height:300px;
