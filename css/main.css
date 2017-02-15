@@ -45,23 +45,13 @@ body
 /* Centered background images */
 .bg-img
 {
+    cursor:pointer;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
 
 /* images */
-/*.img-lazy-load
-{
-    background-color:  #ccc;
-    opacity:0.1;
-    transition: opacity 0.3s;
-}
-.img-lazy-load-complete
-{
-    cursor:pointer;
-    opacity:1;
-}*/
 .img-l
 {
     height:300px;
@@ -220,14 +210,14 @@ body
     text-align: justify;
     line-height:1.8rem;
 }
-.section-footer-content
+.section-info-centre
+{   
+    align-items:center;
+}
+.section-content-footer
 {
     flex-flow: row wrap;
     justify-content: space-around;
-}
-.section-footer-content .section-info
-{
-    align-items:center;
 }
 
 /* map */
@@ -241,13 +231,12 @@ body
     width: 100%;
 }
 
-/* Slideshow modal */
-.modal 
+/* Slideshow */
+.slideshow 
 {
     visibility: hidden;
+    z-index: -1;
     opacity: 0;
-    pointer-events:none;
-    z-index: 2000;
     position: fixed;
     top: 0; 
     left: 0; 
@@ -256,21 +245,21 @@ body
     background: rgba(0, 0, 0, 0.9);
     transition: opacity 0.3s;
 }
-.modal-active
+.slideshow-active
 {
+    z-index: 2000;
     visibility: visible;
     opacity: 1;
-    pointer-events: auto;
 }
-.modal-slide 
+.slideshow-slide 
 {
     visibility: hidden;
 }
-.modal-slide-active
+.slideshow-slide-active
 {
     visibility: visible;
 }
-.modal-img 
+.slideshow-img 
 {
     position: absolute;
     top: 0;
@@ -280,13 +269,13 @@ body
     align-items:center;
     justify-content: center;
 }
-.modal-img img 
+.slideshow-img img 
 {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
 }
-.modal-text 
+.slideshow-text 
 {
     position: absolute;
     bottom: 0;
@@ -296,7 +285,7 @@ body
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     padding:1rem;
 }
-.modal-close, .modal-prev, .modal-next 
+.slideshow-close, .slideshow-prev, .slideshow-next 
 {
     position: absolute;
     top: 0;
@@ -308,24 +297,24 @@ body
     cursor: pointer;
     width: 5rem;
 }
-.modal-close:hover, .modal-prev:hover, .modal-next:hover 
+.slideshow-close:hover, .slideshow-prev:hover, .slideshow-next:hover 
 {
     opacity:1;
 }
-.modal-prev, .modal-next
+.slideshow-prev, .slideshow-next
 {
     font-size:3rem;
     bottom:0;
 } 
-.modal-prev
+.slideshow-prev
 {
     left: 0;
 } 
-.modal-next 
+.slideshow-next 
 {
     right: 0;
 }
-.modal-close 
+.slideshow-close 
 {
     font-size:4rem;
     right: 0;
