@@ -188,6 +188,15 @@ body
     text-align: justify;
     line-height:1.8rem;
 }
+.section-content-footer
+{
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.section-info-centre
+{   
+    align-items:center;
+}
 
 /* Centered background images */
 .bg-img
@@ -371,6 +380,10 @@ body
     .section-images > div > div
     {
         margin:5px;
+    }
+    .section-footer
+    {
+        flex-flow: column nowrap;
     }
     .map
     {
